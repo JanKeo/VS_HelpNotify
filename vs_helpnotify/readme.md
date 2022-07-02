@@ -1,0 +1,1 @@
+This is just a way better alternative to ESX. ShowHelpNotification because it consumes a lot of performance and does not look very good. ESX. ShowHelpNotification consumes 0.02-0.03ms, this script only 0.00.

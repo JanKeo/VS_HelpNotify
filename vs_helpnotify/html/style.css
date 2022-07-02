@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+
+  .notification {
+    margin: 1rem 0 1rem 1rem;
+    background-color: rgba(54,54,54,150);
+    width: 23vh;
+    height: 6vh;
+    word-wrap: break-word;
+    padding: 1rem;
+    background-color: rgb(34, 32, 32);
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0.9;
+    border: 1.5px solid rgba(216, 39, 39, 0.86);
+  }
+  
+  #message {
+    color: rgba(216, 39, 39, 0.86);
+    font-size: 18px;
+  }
