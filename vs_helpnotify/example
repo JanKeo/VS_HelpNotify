@@ -1,0 +1,32 @@
+Example usage:
+If your Thread is running slower than 1000 or 1000ms then use the vsh:timednotify event like this:
+  Citizen.CreateThread(function()
+      while true do
+          Citizen.Wait(1000)
+          local dist = #(GetEntityCoords(PlayerPedId()) - Config.randompoint)
+          if dist < 2 then
+              TriggerEvent("vsh:timednotify", "test", 1000)
+          end
+      end
+  end)
+  
+If your Thread is running faster than 1000 then use the vsh:opennotify and vsh:closenotify event like this:
+  local shows = false
+  Citizen.CreateThread(function()
+      while true do
+          Citizen.Wait(0)
+          local dist = #(GetEntityCoords(PlayerPedId()) - Config.randompoint)
+          if dist < 2 then
+              if not shows then
+                  TriggerEvent("vsh:opennotify", "test")
+                  shows = true
+              end
+          else
+              if shows then
+                  TriggerEvent("vsh:closenotify", "test")
+                  shows = false
+              end
+          end
+      end
+  end)
+This is Performancewise 0.02-0.03ms better then ESX.ShowHelpNotification which makes a huge difference if you use it in all scripts instead!
