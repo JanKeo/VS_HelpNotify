@@ -20,10 +20,15 @@ If your Thread is running faster than 1000 then use the vsh:opennotify and vsh:c
               if not shows then
                   TriggerEvent("vsh:opennotify", "test")
                   shows = true
+                  if IsControlJustReleased(0, 38) then
+                      --insert your code
+                      TriggerEvent("vsh:closenotify")
+                      shows = false
+                  end
               end
           else
               if shows then
-                  TriggerEvent("vsh:closenotify", "test")
+                  TriggerEvent("vsh:closenotify")
                   shows = false
               end
           end
